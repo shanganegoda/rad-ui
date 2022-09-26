@@ -1,0 +1,99 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Quotation</h3>
+        </div>
+        <div class="table-responsive">
+          <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+              <div class="card-header bg-white border-0">
+                <div class="row align-items-center">
+                  <div class="col-8">
+                    <h3 class="mb-0">Please select the panels that are needed to be painted</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <form>
+                  <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
+                  <div class="pl-lg-4">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-type">Panels</label>
+                          <!-- <select class="form-control form-control-alternative" name="demo" id="select-panel">
+                            <option selected="selected" value="1">Front buffer</option>
+                            <option value="2">Back buffer</option>
+                            <option value="3">Front left door</option>
+                            <option value="4">Front right door</option>
+                          </select> -->
+                          <ng-multiselect-dropdown class="form-control form-control-alternative"
+                            [placeholder]="'Select panels'"
+                            [settings]="dropdownSettings"
+                            [data]="dropdownList"
+                            [(ngModel)]="selectedItems"
+                            (onSelect)="onItemSelect($event)"
+                            (onSelectAll)="onSelectAll($event)">
+                          </ng-multiselect-dropdown>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <!-- <div class="col-lg-6">
+                        <div class="form-group">
+                          <label class="form-control-label" for="input-vehicle-no">Vehicle Number</label>
+                          <input type="text" id="input-vehicle-no" class="form-control form-control-alternative" placeholder="XXX 0000">
+                        </div>
+                      </div> -->
+                      <div class="table-responsive">
+                        <table class="table align-items-center table-flush">
+                          <thead class="thead-light">
+                            <tr>
+                              <th scope="col">Panel name</th>
+                              <th scope="col">Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let panel of selectedItems">
+                              <td>
+                                {{ panel.label }}
+                              </td>
+                              <td>
+                                Rs. {{ findPrice(panel.id) }}
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>Total Price</th>
+                              <th>Rs. {{ totalPrice }}</th>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group">
+                          <button type="button" (click)="continue()" class="btn btn-primary my-4">
+                            Next <i class="ni ni-bold-right"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

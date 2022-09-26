@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-gradient-danger {
+  background: linear-gradient(87deg, #be9632 0, #f56036 100%) !important;
+}
+
+// custom multi select dropdown
+.multiselect-dropdown .dropdown-btn {
+  border: none !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+  max-width: 130px !important;
+}
